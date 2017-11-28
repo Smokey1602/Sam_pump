@@ -9,6 +9,7 @@
 #include <stdlib.h>		// Bibliotheque standard pour la declaration des librairies standard
 #include <pigpio.h> 	// Bibliotheque pour la gestion des GPIO de la rpi
 #include <sys/time.h>	// Bilbiothque pour la gestion du temps 
+#include <unistd.h> 	// Bibliotheque apportant la focntion "sleep"
 
 //Declaration des variables 
 // j'effectue la déclaration des varibles en globales pour le code soit plus compréhensible pour toi
@@ -68,7 +69,7 @@ int main(void)
 		// A chaque boucle nous allons regarder si le capteur nous délivre un 0 ou un 1
 		if(gpioRead(23) !=1)
 		{
-			Launch_pump(30); 	// fonction que nous avons définis plus tot pour activer la pompe et donc permettre d'alimenter en eau la plante verte!
+			Launch_Pump(30); 	// fonction que nous avons définis plus tot pour activer la pompe et donc permettre d'alimenter en eau la plante verte!
 								// tu peux modifier le temps d'arrosage en modifiant la valeur a l'intérieur ( 30 = 30secondes 10= 10secondes etc etc ...)
 		}	
 		else
