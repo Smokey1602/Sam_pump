@@ -28,6 +28,7 @@ void Initialisation (void)
 	if (gpioInitialise() < 0) // Initialisation des ports d'entrée sorties
 		{
 			fprintf(stderr, "pigpio initialisation échouée\n");// affichage sur la console d'un code d'erreur en case de défaut
+			exit(1);
 		}	
 	if(gpioSetMode(18,PI_OUTPUT) !=0) // output du relay a l'état haut, on choisira de controller le moteur 
 		{
